@@ -50,7 +50,7 @@
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancelar">
-                            <input type="button" class="btn btn-primary" value="Guardar" id="guardar">
+                            <input type="button" class="btn btn-primary" data-dismiss="modal" value="Guardar" id="guardar">
                         </div>
                     </div>
                 </div>
@@ -61,9 +61,9 @@
         <div id="mDelete" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-tittle">Eliminar Registro</h3>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="modal-header bg-danger">
+                        <h3 class="modal-tittle text-light">Eliminar Registro</h3>
+                        <button type="button" class="close text-light" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
                         <h4>Esta seguro de eliminar este registro?</h4>
@@ -80,9 +80,9 @@
         <div id="mEdit" class="modal fade">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-tittle">Editar Registro</h2>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="modal-header bg-dark">
+                        <h2 class="modal-tittle text-light">Editar Registro</h2>
+                        <button type="button" class="close text-light" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -163,8 +163,8 @@
                             + "<td>" + i.direccion + "</td>"
                             + "<td>" + i.telefono + "</td>"
                             + "<td>"
-                            + "<button onclick='cargarR(" + i.id + ")' type='button' class='btn btn-warning ml-4 mt-1' data-toggle='modal' data-target='#mEdit'>Editar</button>"
-                            + "<button onclick='idP(" + i.id + ");' type='button' class='btn btn-danger ml-4 mt-1' data-toggle='modal' data-target='#mDelete'>Eliminar</button>"
+                            + "<button onclick='cargarR(" + i.id + ")' type='button' class='btn btn-warning ml-4 mt-1' data-toggle='modal' data-target='#mEdit'>Editar <i class='fas fa-edit'></i></button>"
+                            + "<button onclick='idP(" + i.id + ");' type='button' class='btn btn-danger ml-4 mt-1' data-toggle='modal' data-target='#mDelete'>Eliminar <i class='fas fa-trash-alt'></i></button>"
                             + "</td>"
                             + "</tr>");
                     });
