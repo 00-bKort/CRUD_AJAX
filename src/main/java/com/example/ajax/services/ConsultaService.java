@@ -13,8 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
-
 /**
  * ConsultaService
  */
@@ -28,15 +26,25 @@ public class ConsultaService {
     @Autowired
     IPaciente ip;
 
-    //muestra el listado
+    // muestra el listado
     @Transactional
     public List<Consulta> conlist() {
         return (List<Consulta>) ic.findAll();
     }
 
-    //el guardar o actualizar
     @Transactional
-    public Boolean SaveOrUpdate(Consulta con){
+    public List<Paciente> palist() {
+        return (List<Paciente>) ip.findAll();
+    }
+
+    @Transactional
+    public List<Doctor> doclist() {
+        return (List<Doctor>) idoc.findAll();
+    }
+
+    // el guardar o actualizar
+    @Transactional
+    public Boolean SaveOrUpdate(Consulta con) {
         try {
             ic.save(con);
             return true;
@@ -45,19 +53,9 @@ public class ConsultaService {
         }
     }
 
-    //obtener el id de doctor y paciente
+    // para eliminar
     @Transactional
-    public Doctor gDoctor(Integer id){
-        return idoc.findById(id).get();
-    }
-    @Transactional
-    public Paciente gPaciente(Integer id){
-        return ip.findById(id).get();
-    }
-
-    //para eliminar
-    @Transactional
-    public Boolean delete(Consulta con){
+    public Boolean delete(Consulta con) {
         try {
             ic.delete(con);
             return true;
@@ -66,9 +64,20 @@ public class ConsultaService {
         }
     }
 
-    //para modificar
+    // obtener el id de doctor y paciente
     @Transactional
-    public Consulta getConsulta(Integer id){
+    public Doctor gDoctor(Integer id) {
+        return idoc.findById(id).get();
+    }
+
+    @Transactional
+    public Paciente gPaciente(Integer id) {
+        return ip.findById(id).get();
+    }
+
+    // para modificar
+    @Transactional
+    public Consulta getConsulta(Integer id) {
         return ic.findById(id).get();
     }
 }

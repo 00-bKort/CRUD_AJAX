@@ -28,6 +28,11 @@ public class DoctorService {
     }
 
     @Transactional
+    public List<Especialidad> getAllEspecialidad() {
+        return (List<Especialidad>) ie.findAll();
+    }
+
+    @Transactional
     public Boolean SaveOrUpdate(Doctor doc) {
         try {
             idoc.save(doc);
@@ -52,8 +57,11 @@ public class DoctorService {
         }
     }
 
-    @Transactional
     public Doctor getDoctor(Integer id) {
         return idoc.findById(id).get();
+    }
+
+    public Especialidad getEspecialidad(Integer id) {
+        return ie.findById(id).get();
     }
 }
