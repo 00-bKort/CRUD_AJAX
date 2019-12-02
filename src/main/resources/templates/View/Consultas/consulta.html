@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Consulta</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div>
+        <h1 class="display-4 text-center">CRUD AJAX</h1>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"> Crud_Ajax</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a id="doctor">Doctor</a></li>
+                    <li><a id="esp">Especialidad</a></li>
+                    <li><a id="consulta">Consultas</a></li>
+                    <li><a id="paciente">Paciente</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--TABLA-->
+    <div class="container">
+        <h1 class="display-4">CONSULTAS</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>FECHA</th>
+                    <th>SINTOMAS</th>
+                    <th>DIAGNOSTICO</th>
+                    <th>DOCTOR</th>
+                    <th>PACIENTE</th>
+                </tr>
+            </thead>
+            <tbody id="cConsulta">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/consulta.js"></script>
+</body>
+
+</html>
